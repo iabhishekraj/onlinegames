@@ -1,0 +1,413 @@
+* {
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    margin: 0px;
+    background-image: url("../images/bg5.jpg");
+    background-repeat: no-repeat;
+    background-color: #101012;
+    /*background-size: 100% 100%;*/
+    background-size: cover;
+    overflow-x: hidden;
+}
+
+#loader {
+    width: 25%;
+    padding-top: 100px;
+    margin: auto;
+}
+
+#wrapper {
+    /*    display: none;*/
+}
+
+#header {
+    background-color: #003F60;
+    /*    background: rgba(255, 255, 255, 0.2);*/
+    padding: 25px;
+    margin-bottom: 50px;
+    position: relative;
+    box-shadow: 0px 2px 3px white;
+    height: 90px;
+    overflow: hidden;
+}
+
+#header h1 {
+    text-align: center;
+    z-index: 2;
+    width: 50%;
+    font-family: 'Cinzel', serif;
+    font-weight: bolder;
+    /*    border: 1px solid black;*/
+    color: yellowgreen;
+    font-size: 44px;
+    position: absolute;
+    text-shadow: 5px -5px 4px black;
+    top: 50%;
+    left: 25%;
+}
+
+
+/*Animation of header image*/
+
+@keyframes headimage {
+    0% {
+        top: 0%;
+        left: -10%;
+    }
+    100% {
+        top: 0%;
+        left: 100%;
+    }
+}
+
+#header .headgif {
+    /*    border: 1px solid;*/
+    position: absolute;
+    z-index: 0;
+    top: 0%;
+    height: 90px;
+    width: 120px;
+    animation: headimage 15s infinite linear;
+}
+
+#content {
+    padding: 0px auto;
+    text-align: center;
+    width: 80%;
+    margin: 0px auto;
+    overflow: hidden;
+}
+
+#content ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    list-style: none;
+    padding: 0px auto;
+}
+
+#content ul li {
+    position: relative;
+    width: 30%;
+    height: 250px;
+    padding-bottom: 20px;
+    position: relative;
+}
+
+#content ul li img {
+    width: 96%;
+    height: 96%;
+}
+
+#footer {
+    width: 100%;
+    background-color: #003F60;
+    padding: 20px;
+    display: flex;
+    box-shadow: 0px -2px 3px white;
+}
+
+#footer h2 {
+    color: white;
+    width: 48%;
+    font-size: 12px;
+}
+
+#footer h2:first-child {
+    /*    text-align: center;*/
+}
+
+#footer h2:last-child {
+    text-align: right;
+}
+
+
+/*Animation*/
+
+
+/*
+@keyframes movement {
+    from {
+        transform: scale(1, 1);
+    }
+    to {
+        transform: scale(1.1, 1.1);
+    }
+}
+*/
+
+#content ul li:hover img {
+    /*    animation: movement 0.9s;*/
+    transform: scale(1.05, 1.05);
+    box-shadow: 8px 10px 20px black;
+    position: absolute;
+    left: 0px;
+    z-index: 4;
+}
+
+#content ul li:hover #game1info {
+    display: block;
+    z-index: 5;
+    /*top:25%;*/
+    left: 25%;
+    transition: 5s;
+}
+
+@keyframes ball1Move {
+    /*
+    0% {
+        transform: translate(0px, 80px);
+    }
+    50% {
+        transform: translate(800px, 720px);
+    }
+    100% {
+        transform: translate(1600px, 80px);
+    }
+*/
+    0% {
+        opacity: 0;
+    }
+    1% {
+        opacity: 0;
+    }
+    2% {
+        opacity: 0;
+    }
+    3% {
+        opacity: 0;
+    }
+    4% {
+        opacity: 0;
+    }
+    5% {
+        opacity: 0;
+    }
+    6% {
+        opacity: 0;
+    }
+    7% {
+        opacity: 0;
+    }
+    8% {
+        opacity: 0;
+    }
+    9% {
+        opacity: 1;
+        top: 12%;
+        left: 95%;
+    }
+    50% {
+        top: 92%;
+        left: 50%;
+    }
+    100% {
+        top: 12%;
+        left: 0%;
+    }
+}
+
+.ball1 {
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    top: 0px;
+    left: 0px;
+    animation: ball1Move 15s infinite linear alternate;
+}
+
+@keyframes ball2Move {
+    0% {
+        top: 12%;
+        left: 0%;
+    }
+    14% {
+        top: 92%;
+        left: 13%;
+    }
+    28% {
+        top: 12%;
+        left: 25%;
+    }
+    42% {
+        top: 92%;
+        left: 38%;
+    }
+    56% {
+        top: 12%;
+        left: 50%;
+    }
+    70% {
+        top: 92%;
+        left: 63%;
+    }
+    84% {
+        top: 12%;
+        left: 76%;
+    }
+    100% {
+        top: 92%;
+        left: 94%;
+    }
+}
+
+.ball2 {
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    top: 0px;
+    left: 0px;
+    animation: ball2Move 18s infinite linear alternate;
+}
+
+@keyframes ghost1Move {
+    /*
+    from {
+        top: 700px;
+        left: 0px;
+    }
+    to {
+        top: 700px;
+        left: 1650px;
+    }
+*/
+    from {
+        top: 150PX;
+        left: 0%;
+    }
+    to {
+        top: 150PX;
+        left: 95%;
+    }
+}
+
+.ghost1 {
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    top: 150px;
+    left: 0%;
+    /*    z-index: -1;*/
+    animation: ghost1Move 19s infinite linear;
+}
+
+@keyframes ghost2Move {
+    from {
+        top: 250PX;
+        left: 0%;
+    }
+    to {
+        top: 250PX;
+        left: 95%;
+    }
+}
+
+.ghost2 {
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    top: 250px;
+    left: 0%;
+    /*    z-index: -1;*/
+    animation: ghost2Move 19s infinite ease-in;
+}
+
+@keyframes ghost3Move {
+    from {
+        top: 350PX;
+        left: -5%;
+    }
+    to {
+        top: 350PX;
+        left: 100%;
+    }
+}
+
+.ghost3 {
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    z-index: 1;
+    top: 350px;
+    left: 0%;
+    /*    z-index: -1;*/
+    animation: ghost3Move 16s infinite linear;
+}
+
+@keyframes ghost4Move {
+    from {
+        top: 450PX;
+        left: 0%;
+    }
+    to {
+        top: 450PX;
+        left: 95%;
+    }
+}
+
+.ghost4 {
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    top: 450px;
+    left: 0%;
+    /*    z-index: -1;*/
+    animation: ghost4Move 18s infinite ease;
+}
+
+@keyframes ghost5Move {
+    from {
+        top: 550PX;
+        left: 0%;
+    }
+    to {
+        top: 550PX;
+        left: 95%;
+    }
+}
+
+.ghost5 {
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    top: 550px;
+    left: 0%;
+    /*    z-index: -1;*/
+    animation: ghost5Move 15s infinite ease-in-out;
+}
+
+.ufo img {
+    height: 60px;
+    width: 60px;
+    margin-right: 200px;
+}
+
+.ufo {
+    position: absolute;
+    z-index: -1;
+    top: 10%;
+    right: 3%;
+    animation: ufoMove 17s infinite linear;
+}
+
+@keyframes ufoMove {
+    from {
+        top: 2%;
+    }
+    to {
+        top: 90%;
+    }
+}
+
+#game1info {
+    position: absolute;
+    border: 1px solid;
+    top: 25%;
+    left: -25%;
+    color: white;
+    display: none;
+}
