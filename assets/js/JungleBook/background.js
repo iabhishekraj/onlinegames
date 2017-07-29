@@ -1,7 +1,9 @@
 var gameoverImg, thumbnailImg, bgMusic, eatFruitTune, bgImg, player, flip = 1
-    , tree, score = 0, charImg1, charImg2, charImg3, charImg4, treeImg1, treeImg2, treeImg3, randomTree, heightFruit, enemyImg1, enemyImg2, randomForEnemy, trees = []
+    , tree, score = 0
+    , charImg1, charImg2, charImg3, charImg4, treeImg1, treeImg2, treeImg3, randomTree, heightFruit, enemyImg1, enemyImg2, randomForEnemy, trees = []
     , fruits = []
-    , enemies = [], enemy, flipEnemy;
+    , enemies = []
+    , enemy, flipEnemy;
 
 function preload() {
     bgMusic = loadSound("assets/images/Farty-Crooks_Looping.mp3");
@@ -37,6 +39,7 @@ function draw() {
     fill("blue");
     textStyle(BOLD);
     text("Score = " + score, 1043, 25);
+    text("**Use Space bar to jump", 20, 20);
     addMoreTrees();
     printTrees();
     line(0, 600, 1200, 600);
@@ -128,7 +131,7 @@ function addMoreEnemy() {
     randomForEnemy = randomForEnemy + 270;
     if (randomForEnemy > 300) {
         randomForEnemy = 200;
-    } 
+    }
     if (frameCount % 200 == 0) {
         enemies.push(new Enemy(enemyImg1, enemyImg2, randomHeightOfEnemy));
     }
@@ -170,6 +173,7 @@ function isOut() {
             fill("blue");
             textStyle(BOLD);
             text("Score = " + score, 1043, 20);
+            text("Press F5 to Restrat the Game", 480, 300);
             printTrees();
             line(0, 600, 1200, 600);
             fill('green');
@@ -184,4 +188,3 @@ function isOut() {
         }
     }
 }
-

@@ -17,7 +17,7 @@ function preload() {
 }
 
 function setup() {
-    var c = createCanvas(1100, 640);
+    var c = createCanvas(1100, 620);
     c.parent("gameWindow");
     spacetune.play();
     myrocket = new rocket(rocketImg, rocketspeed);
@@ -28,7 +28,10 @@ function draw() {
     background(space);
     fill('white');
     textSize(30);
-    text("score = " + score, 900, 30);
+    text("Score = " + score, 900, 30);
+    textSize(15);
+    text("**Use Space bar to Fire", 20, 30);
+    text("**Use Left Arrow and Right Arrow to Move", 20, 50)
     myrocket.printrocket();
     myrocket.move();
     printMissile();
